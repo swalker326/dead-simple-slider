@@ -1,7 +1,7 @@
 import { CSSProperties, MouseEvent, useRef } from "react";
 type Props = {
   images: string[];
-  style?:CSSProperties & {
+  style?: CSSProperties & {
     NavIcon?: CSSProperties;
     ImageStyle?: CSSProperties;
   };
@@ -34,18 +34,18 @@ const Slider = ({ images, style }: Props) => {
     height: style?.height || "20rem",
     flexFlow: "row nowrap",
     scrollSnapType: "x mandatory",
+    msOverflowStyle: "none",
+    scrollbarWidth: "none",
   };
   const SlideHolder: CSSProperties = {
     display: "flex",
-    msOverflowStyle: "none",
-    scrollbarWidth: "none",
     justifyContent: "center",
     scrollSnapAlign: "start",
     flex: "none",
     minWidth: "100%",
     height: style?.height || "20rem",
   };
-  const ImageStyle: CSSProperties = {
+  const SlideImage: CSSProperties = {
     objectFit: style?.ImageStyle?.objectFit || "cover",
     width: "100%",
   };
@@ -68,10 +68,11 @@ const Slider = ({ images, style }: Props) => {
         <div style={SliderHolder}>
           {images.map((imageString, index) => (
             <div
+              key={`dead-slide-${index}`}
               ref={(el: HTMLDivElement) => (SlideRefs.current[index] = el)}
               style={SlideHolder}
             >
-              <img src={imageString} alt="" style={ImageStyle} />
+              <img src={imageString} alt="" style={SlideImage} />
             </div>
           ))}
         </div>

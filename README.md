@@ -15,5 +15,43 @@ const images = [
   'https://images.unsplash.com/photo-1547756536-cde3673fa2e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFycnklMjBwb3R0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
 ]
 
-<Slider images={arrayOfImageStrings}>
+<Slider images={images} />
+```
+
+The slider accepts an optional style prop that can style the 6 main components of the slider
+
+- SliderContainer
+- SliderHolder
+- SlideHolder
+- SlideImage
+- NavIcon
+
+the default styling looks like this:
+
+```javascript
+const SlideHolder: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  scrollSnapAlign: "start",
+  flex: "none",
+  minWidth: "100%",
+  height: style?.height || "20rem",
+};
+const SlideImage: CSSProperties = {
+  objectFit: style?.ImageStyle?.objectFit || "cover",
+  width: "100%",
+};
+const SliderNav: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+};
+const NavIcon: CSSProperties = {
+  width: "20px",
+  height: "20px",
+  margin: "15px 3px",
+  backgroundColor: style?.NavIcon?.backgroundColor || "purple",
+  border: "none",
+  borderRadius: "100%",
+  cursor: "pointer",
+};
 ```
