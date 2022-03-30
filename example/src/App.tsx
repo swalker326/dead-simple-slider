@@ -13,7 +13,15 @@ const App = () => {
   return (
     <div className="App">
       <h1>Hello There</h1>
+      <h2>Basic Example Slider</h2>
       <Slider images={images} />
+      <h2>Slider with some custom styles</h2>
+      <div>
+        <Slider
+          images={images}
+          style={{ height: "100%", NavIcon: { backgroundColor: "orange" } }}
+        />
+      </div>
     </div>
   );
 };
