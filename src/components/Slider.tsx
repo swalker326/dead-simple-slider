@@ -1,21 +1,9 @@
 import { CSSProperties, MouseEvent, useRef } from "react";
 type Props = {
   images: string[];
-  style?: {
-    height?: string;
-    NavIcon?: {
-      width?: string;
-      height?: string;
-      margin?: string;
-      backgroundColor?: string;
-      border?: string;
-      borderRadius?: string;
-      cursor?: string;
-    };
-    ImageStyle?: {
-      objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
-      width?: string;
-    };
+  style?:CSSProperties & {
+    NavIcon?: CSSProperties;
+    ImageStyle?: CSSProperties;
   };
 };
 const Slider = ({ images, style }: Props) => {
