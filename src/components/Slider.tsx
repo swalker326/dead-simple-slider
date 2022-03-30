@@ -79,7 +79,7 @@ const Slider = ({ images, style }: Props) => {
       </div>
       <div ref={sliderRef} style={SliderNav} onClick={handleNavClick}>
         {images.map((item, index) => (
-          <button style={NavIcon} id={index.toString()}></button>
+          <button key={index} style={NavIcon} id={index.toString()}></button>
         ))}
       </div>
     </div>
